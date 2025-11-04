@@ -6,8 +6,8 @@ x = np.loadtxt("dow.txt")
 N = x.size
 t = np.arange(N)              
 
-datafile = Path("dow.txt")            # 同目录或把路径改成你的实际位置
-x = np.loadtxt(datafile)              # daily closes
+datafile = Path("dow.txt")            
+x = np.loadtxt(datafile)              
 N = len(x)
 t = np.arange(N)
 plt.figure(1)
@@ -18,11 +18,11 @@ plt.title("Daily closing ~ Time")
 plt.tight_layout()
 plt.show()
 
-Y = np.fft.rfft(x)                    # length N//2 + 1 (positive freqs)
+Y = np.fft.rfft(x)                    
 M = Y.size
 K10 = int(np.ceil(0.10 * M))
 Y10 = Y.copy()
-Y10[K10:] = 0                         # zero out last 90%
+Y10[K10:] = 0                        
 x10 = np.fft.irfft(Y10, n=N) 
 plt.figure(2)
 plt.plot(t, x, label="original")
@@ -46,4 +46,5 @@ plt.ylabel("Close")
 plt.title("low-pass filter: keep 10% of max frequency")
 plt.legend()
 plt.tight_layout()
+
 plt.show()
