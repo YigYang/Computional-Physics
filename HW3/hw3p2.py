@@ -36,7 +36,7 @@ plt.show()
 
 K2 = int(np.ceil(0.02 * M))
 Y2 = Y.copy()
-Y2[K2:] = 0                         # zero out last 98%
+Y2[K2:] = 0                        
 x2 = np.fft.irfft(Y2, n=N)
 plt.figure(3)
 plt.plot(t, x, label="original")
@@ -48,3 +48,4 @@ plt.legend()
 plt.tight_layout()
 
 plt.show()
+
