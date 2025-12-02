@@ -1,5 +1,5 @@
 import numpy as np
-import matplotlib.pyplot as plt;'L'
+import matplotlib.pyplot as plt;
 from numba import njit
 
 M = 100          
@@ -179,3 +179,4 @@ plt.title(r"Evolution of optimal $\omega$ in golden-ratio search")
 plt.grid(True)
 plt.tight_layout()
 plt.show()
+
